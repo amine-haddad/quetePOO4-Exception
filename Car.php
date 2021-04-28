@@ -26,32 +26,36 @@ class Car extends Vehicle
         $this->energy = $energy;
         
     }
-
-   
-
-    public function setParkBrake()
-    {
-        if ($this->hasParkBrake === true){
-            $this->hasParkBrake === false;
-            echo 'not ok';
-        }else{
-            $this->hasParkBrake ===true;
-            echo 'ok';
-        }
-        return $this->hasParkBrake;
-    }
-    
-    
-    
     
     public function Start()
     {
-        if($this->setParkBrake() === FALSE){
-
+        if($this->hasParkBrake === false){
+        
             throw new Exception('le frein à main est tiré!');
         }
-        return $this->setParkBrake();
+        echo'je demare!';
     }
+    public function setParkBrake()
+    {
+        
+        return $this->hasParkBrake;
+    }
+
+    public function getParkBrake(){
+
+        if ($this->hasParkBrake === true){
+            echo 'le frein a main est tiréeee';
+            
+        }else{
+        
+            echo 'le frein à main est desserré';
+        }
+    }
+
+    
+    
+    
+    
     
     
     public function getEnergy(): string
@@ -72,6 +76,7 @@ class Car extends Vehicle
 
         return $this;
     }
+    
     public function getEnergyLevel(): int
     {
         return $this->energyLevel;

@@ -58,19 +58,22 @@ echo '<br> Vitesse de la camion : ' . $truck->getCurrentSpeed() . ' km/h' . '<br
 
 echo $truck->brake() . '<br>';
 echo  'contôle chargement: ';
-echo $truck->setLoading(true);
+echo $truck->setLoading(true). '<br>';
 //var_dump($e);
-echo var_dump($Car1->start());
-echo var_dump($Car1->setParkBrake());
-$Car1->setParkBrake();
+
+echo $Car1->start(). '<br>';
+echo $Car1->getParkBrake(). '<br>';
+
+
 try {
     //code...
     $Car1->Start();
 } catch (Exception $e) {
     //throw $th;
-    echo $Car1->start();
-    echo $Car1->setParkBrake();
+    $Car1->getParkBrake();
     echo $e->getMessage();
+    $Car1->setParkBrake()===true;
 } finally {
-    echo 'Ma voiture roule comme un donut';
+    echo 'Ma voiture roule comme un donut'. '<br>';
 }
+echo $Car1->getParkBrake(). '<br>';
